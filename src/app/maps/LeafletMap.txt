@@ -29,7 +29,7 @@ export default function LeafletMap() {
                 attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {json.slice(0, 10000).map((location, index) => (
+            {json.map((location, index) => (
                 <Marker key={index} position={[location.lat, location.lng]}>
                     <Popup>
                         {location.name} {location.description}

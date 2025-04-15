@@ -1,14 +1,14 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import json from './locations.json';
 
-// Dynamically load the LeafletMap to avoid SSR
-const LeafletMap = dynamic(() => import('./LeafletMap'), { ssr: false });
+const WebGLMap = dynamic(() => import('./WebGLMap'), { ssr: false });
 
 export default function HomePage() {
   return (
     <main>
-      <LeafletMap />
+      <WebGLMap points={json} />
     </main>
   );
 }
